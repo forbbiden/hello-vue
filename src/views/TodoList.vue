@@ -4,6 +4,9 @@
     <hr/>
     <div class="todo">
       添加任务： <input type='text' v-model="inputItem" @keyup.enter="addItem" />
+      <a @click="clearItems">  |   清空列表 </a>
+      <a @click="finish">  |   完成所有</a>
+      <a @click="unfinish">  |   未完成所有</a>
     </div>
     <hr/>
     <ul class="list">
@@ -36,6 +39,15 @@ export default {
       if (ok) {
         this.list.splice(i, 1);
       }
+    },
+    clearItems() {
+      this.list = []
+    },
+    finish() {
+      this.list.forEach(e => e.completed = true);
+    },
+    unfinish() {
+      this.list.forEach(e => e.completed = false);
     }
   },
   data: function() {
