@@ -30,7 +30,7 @@ export default {
         this.list.push({
           content: this.inputItem,
           completed: false
-        });
+        });  
       }
       this.inputItem = '';
     },
@@ -54,7 +54,7 @@ export default {
     return {
       inputItem: '',
       list: []
-    }
+    };
   }
 };
 </script>
