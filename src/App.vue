@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/directives">Directives</router-link> |
+      <router-link to="/computed-attr">Computed Attribute</router-link> |
       <router-link to="/todo">TodoList</router-link> |
       <router-link to="/haha">Haha</router-link>
     </div>

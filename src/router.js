@@ -34,6 +34,11 @@ export default new Router({
       path: "/directives",
       name: "Directives",
       component: () => import("./views/Directives.vue")
+    },
+    {
+      path: "/computed-attr",
+      name: "ComputedAttr",
+      component: () => import("./views/ComputedAttr.vue")
     }
   ]
 });
