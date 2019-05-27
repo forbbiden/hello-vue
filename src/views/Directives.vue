@@ -34,6 +34,9 @@ export default {
       this.seen = !this.seen;
     },
     onTest() {
+      if (null == this.count) {
+        this.count = 0;
+      }
       this.count ++;
     }
   },
