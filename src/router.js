@@ -24,6 +24,11 @@ export default new Router({
       path: "/todo",
       name: "TodoList",
       component: () => import("./views/TodoList.vue")
+    },
+    {
+      path: "/haha",
+      name: "Haha",
+      component: () => import("./views/Haha.vue")
     }
   ]
 });

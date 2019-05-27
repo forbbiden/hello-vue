@@ -1,18 +1,19 @@
 <template>
   <div>
     <h1>This is an TodoList page</h1>
-    <hr/>
+    <hr>
     <div class="todo">
-      添加任务： <input type='text' v-model="inputItem" @keyup.enter="addItem" />
-      <a @click="clearItems">  |   清空列表 </a>
-      <a @click="finish">  |   完成所有</a>
-      <a @click="unfinish">  |   未完成所有</a>
+      添加任务： 
+      <input type="text" v-model="inputItem" @keyup.enter="addItem" />
+      <a @click="clearItems"> | 清空列表 </a>
+      <a @click="finish"> | 完成所有</a>
+      <a @click="unfinish"> | 未完成所有</a>
     </div>
-    <hr/>
+    <hr>
     <ul class="list">
       <li v-for="(val, index) in list" :key="index" :class="val.completed ? 'green' : (index%2 == 0 ? 'bg1' : 'bg2')" >
         <input type="checkbox" v-model="val.completed" />
-        {{ val ? val.content : 'undefined' }}
+        {{ val ? val.content : "undefined" }}
         <a @click="deleteItem(index)">删除</a>
       </li>
     </ul>
@@ -30,9 +31,9 @@ export default {
         this.list.push({
           content: this.inputItem,
           completed: false
-        });  
+        });
       }
-      this.inputItem = '';
+      this.inputItem = "";
     },
     deleteItem(i) {
       let ok = confirm(`确认要删除”${this.list[i].content}“吗？`);
@@ -41,18 +42,18 @@ export default {
       }
     },
     clearItems() {
-      this.list = []
+      this.list = [];
     },
     finish() {
-      this.list.forEach(e => e.completed = true);
+      this.list.forEach(e => (e.completed = true));
     },
     unfinish() {
-      this.list.forEach(e => e.completed = false);
+      this.list.forEach(e => (e.completed = false));
     }
   },
   data: function() {
     return {
-      inputItem: '',
+      inputItem: "",
       list: []
     };
   }
