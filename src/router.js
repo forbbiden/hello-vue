@@ -29,6 +29,11 @@ export default new Router({
       path: "/haha",
       name: "Haha",
       component: () => import("./views/Haha.vue")
+    },
+    {
+      path: "/directives",
+      name: "Directives",
+      component: () => import("./views/Directives.vue")
     }
   ]
 });
