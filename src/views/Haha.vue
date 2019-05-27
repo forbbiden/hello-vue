@@ -4,7 +4,7 @@
     <hr>
     <Dark name="React coding references" :languages=reactLanguages />
     <hr>
-    <TodoList />
+    <TodoList ref="todo" />
   </div>
 </template>
 
@@ -23,6 +23,12 @@ export default {
   components: {
     Dark,
     TodoList
+  },
+  methods: {
+  },
+  mounted: function() {
+    this.$refs.todo.inputItem = "Please enter your task";
+    this.$refs.todo.list = [{content: "雅思", completed: false}, {content: "游泳", completed: false}, {content: "旅游", completed: false}]
   }
 };
 </script>
