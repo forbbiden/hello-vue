@@ -8,6 +8,8 @@
     <p>计算属性：{{ nowOfComputed }}</p>
     <p>方法：{{ nowOfMethod() }}</p>
     <p>方法：{{ nowOfMethod() }}</p>
+    <hr>
+    <p>{{ fullName }}</p>
   </div>
 </template>
 <script>
@@ -17,7 +19,9 @@ export default {
   data: function() {
     return {
       message: "Hello Vue !",
-      now: Date.now()
+      now: Date.now(),
+      firstName: "Foo",
+      lastName: "Bar"
     };
   },
   computed: {
@@ -28,6 +32,9 @@ export default {
       // 在now不变的情况下，该方法只会执行一次，Vue进行了缓存处理
       console.log("computed#now");
       return this.now;
+    },
+    fullName: function() {
+      return this.firstName + " " + this.lastName; 
     }
   },
   methods: {
