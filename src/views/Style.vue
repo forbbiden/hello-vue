@@ -16,6 +16,14 @@
     <div :class="[class1, class2]">
       数组语法
     </div>
+    <hr>
+    <h1>绑定内联样式</h1>
+    <div :style="{ color: 'red', fontSize: fontSize + 'px' }">
+      XXXXXXXX
+    </div>
+    <div :style="styleObject">
+      YYYYYYYY
+    </div>
   </div>
 </template>
 <script>
@@ -26,7 +34,13 @@ export default {
       isActive: true,
       classObject: ["active", "active2", "big-font"],
       class1: "big-font",
-      class2: "active"
+      class2: "active",
+      fontSize: 20,
+      styleObject: {
+        color: "green",
+        fontSize: "20px"
+
+      }
     }
   },
   methods: {
