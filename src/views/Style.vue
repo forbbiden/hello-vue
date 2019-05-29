@@ -12,6 +12,10 @@
     <div :class="computedClass">
       渲染的结果和上面一样。我们也可以在这里绑定一个返回对象的计算属性。这是一个常用且强大的模式：
     </div>
+    <hr>
+    <div :class="[class1, class2]">
+      数组语法
+    </div>
   </div>
 </template>
 <script>
@@ -20,7 +24,9 @@ export default {
   data: function() {
     return {
       isActive: true,
-      classObject: ["active", "active2", "big-font"]
+      classObject: ["active", "active2", "big-font"],
+      class1: "big-font",
+      class2: "active"
     }
   },
   methods: {
