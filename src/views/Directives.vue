@@ -11,6 +11,7 @@
       <textarea rows="10" cols="200" v-model="bindInput" />
       <p>{{ bindInput }}</p>
       <hr>
+
       <h1>Directives: v-on</h1>
       <p>缩写：v-on:event="xxx" => :event="xxx"</p>
       单件按钮，统计单击次数：
@@ -37,13 +38,13 @@ export default {
       if (null == this.count) {
         this.count = 0;
       }
-      this.count ++;
+      this.count++;
     }
-  },
-}
+  }
+};
 </script>
 
-<style >
+<style scoped>
 .Directives {
   text-align: left;
   margin-left: 100px;

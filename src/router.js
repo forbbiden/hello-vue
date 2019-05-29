@@ -39,6 +39,11 @@ export default new Router({
       path: "/computed-attr",
       name: "ComputedAttr",
       component: () => import("./views/ComputedAttr.vue")
+    },
+    {
+      path: "/style",
+      name: "Style",
+      component: () => import("./views/Style.vue")
     }
   ]
 });
