@@ -66,6 +66,14 @@
         <li><hr></li>
         <li v-for="(item, i) of items" :key="i">{{ item }}</li>
       </ul>
+      <hr>
+      你也可以用 v-for 通过一个对象的属性来迭代。
+      <ul id="v-for-object" class="demo">
+      <li v-for="(value, name, index) in object" :key="value">
+        {{ index }}. {{ name }} = {{ value }}
+      </li>
+    </ul>
+
     </div>
   </div>
 </template>
@@ -81,7 +89,12 @@ export default {
       awesome: true,
       loginType: "username",
       showFlag: true,
-      items: [ "Foo", "Bar" ]
+      items: [ "Foo", "Bar" ],
+      object: {
+        title: 'How to do lists in Vue',
+        author: 'Jane Doe',
+        publishedAt: '2016-04-10'
+      }
     };
   },
   methods: {
