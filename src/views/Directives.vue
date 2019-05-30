@@ -74,6 +74,13 @@
       </li>
     </ul>
 
+    <br>
+    <hr>
+    <div>
+      <span v-for="n in 10" :key="n">{{ n }} </span>
+      <hr>
+      <span v-for="n in size" :key="n">{{ n }} </span>
+    </div>
     </div>
   </div>
 </template>
@@ -94,7 +101,8 @@ export default {
         title: 'How to do lists in Vue',
         author: 'Jane Doe',
         publishedAt: '2016-04-10'
-      }
+      },
+      size: 5
     };
   },
   methods: {
