@@ -30,7 +30,7 @@
       <hr>
 
       <h1>Directives: v-key</h1>
-      <a @click="loginTypeSwitch" :style="{ color: 'green', fontSize: '20px', 'padding-bottom': '40px'}">切换登录方式</a>
+      <a @click="loginTypeSwitch" :style="{ color: 'green', fontSize: '20px', 'padding-bottom': '40px'}">点击这里切换登录方式</a>
       <hr>
       <template v-if="loginType === 'username'">
         <label>Username: </label>
