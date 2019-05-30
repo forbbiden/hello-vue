@@ -16,6 +16,7 @@
       <p>缩写：v-on:event="xxx" => :event="xxx"</p>
       单件按钮，统计单击次数：
       <input type="button" v-model="count" @click="onTest" />
+      <br>
       <hr>
 
       <h1>Directives: v-if v-else-if v-else</h1>
@@ -25,6 +26,34 @@
 
       <h1 v-if="awesome">呵呵</h1>
       <h1 v-else>哈哈</h1>
+      <br>
+      <hr>
+
+      <a @click="loginTypeSwitch" :style="{ color: 'green', fontSize: '20px', 'padding-bottom': '40px'}">切换登录方式</a>
+      <hr>
+      <template v-if="loginType === 'username'">
+        <label>Username: </label>
+        <input placeholder="Enter your username">
+      </template>
+      <template v-else>
+        <label>Email: </label>
+        <input placeholder="Enter your email address">
+      </template>
+      这种在切换时不会丢掉输入的内容
+      <hr>
+      <template v-if="loginType === 'username'">
+        <label>Username: </label>
+        <input placeholder="Enter your username" key="username">
+      </template>
+      <template v-else>
+        <label>Email: </label>
+        <input placeholder="Enter your email address" key="email">
+      </template>
+      这种在切换时会丢掉输入的内容
+
+      <br>
+      <hr>
+      <br>
     </div>
   </div>
 </template>
@@ -37,7 +66,8 @@ export default {
       seen: true,
       bindInput: "bind指令练习，你在此随意输入，观察下面文字变化 ...",
       count: 0,
-      awesome: true
+      awesome: true,
+      loginType: "username"
     };
   },
   methods: {
@@ -52,6 +82,13 @@ export default {
     },
     awesomeSwitch() {
       this.awesome = !this.awesome;
+    },
+    loginTypeSwitch() {
+      if ("username" === this.loginType) {
+        this.loginType = "email";
+      } else {
+        this.loginType = "username";
+      }
     }
   }
 };
