@@ -8,6 +8,7 @@
       <router-link to="/todo">TodoList</router-link> |
       <router-link to="/haha">Haha</router-link> |
       <router-link to="/style">Style</router-link> |
+      <router-link to="/event">Event</router-link> |
     </div>
     <router-view />
   </div>

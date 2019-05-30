@@ -62,9 +62,9 @@
       <hr>
       <h1>Directives: v-for</h1>
       <ul>
-        <li v-for="(item, i) in items" :key="i">{{ item }}</li>
+        <li v-for="(item, i) in items" :key="123 * i + 11">{{ item }}</li>
         <li><hr></li>
-        <li v-for="(item, i) of items" :key="i">{{ item }}</li>
+        <li v-for="(item, i) of items" :key="99 * i + 123">{{ item }}</li>
       </ul>
       <hr>
       你也可以用 v-for 通过一个对象的属性来迭代。
@@ -77,9 +77,9 @@
     <br>
     <hr>
     <div>
-      <span v-for="n in 10" :key="n">{{ n }} </span>
+      <span v-for="n in 10" :key="n + 12345">{{ n }} </span>
       <hr>
-      <span v-for="n in size" :key="n">{{ n }} </span>
+      <span v-for="n in size" :key="n + 123">{{ n }} </span>
     </div>
     </div>
   </div>

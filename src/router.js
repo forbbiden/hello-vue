@@ -44,6 +44,11 @@ export default new Router({
       path: "/style",
       name: "Style",
       component: () => import("./views/Style.vue")
+    },
+    {
+      path: "/event",
+      name: "Event",
+      component: () => import("./views/Event.vue")
     }
   ]
 });
