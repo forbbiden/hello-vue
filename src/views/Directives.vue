@@ -16,6 +16,15 @@
       <p>缩写：v-on:event="xxx" => :event="xxx"</p>
       单件按钮，统计单击次数：
       <input type="button" v-model="count" @click="onTest" />
+      <hr>
+
+      <h1>Directives: v-if v-else-if v-else</h1>
+      <p>v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的表达式返回 truthy 值的时候被渲染。</p>
+      <h1 v-if="awesome">也可以用 v-else 添加一个“else 块”：</h1>
+      <a @click="awesomeSwitch" :style="{ color: 'green' }">{{ awesome ? "Hidden" : "Show" }}</a>
+
+      <h1 v-if="awesome">呵呵</h1>
+      <h1 v-else>哈哈</h1>
     </div>
   </div>
 </template>
@@ -27,7 +36,8 @@ export default {
     return {
       seen: true,
       bindInput: "bind指令练习，你在此随意输入，观察下面文字变化 ...",
-      count: 0
+      count: 0,
+      awesome: true
     };
   },
   methods: {
@@ -39,6 +49,9 @@ export default {
         this.count = 0;
       }
       this.count++;
+    },
+    awesomeSwitch() {
+      this.awesome = !this.awesome;
     }
   }
 };
