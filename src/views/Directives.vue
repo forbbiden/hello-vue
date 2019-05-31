@@ -126,7 +126,7 @@ export default {
       }
     },
     showSwitch() {
-      this.showFlag = !this.showFlag
+      this.showFlag = !this.showFlag;
     }
   }
 };

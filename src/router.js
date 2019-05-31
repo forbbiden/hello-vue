@@ -49,6 +49,11 @@ export default new Router({
       path: "/event",
       name: "Event",
       component: () => import("./views/Event.vue")
+    },
+    {
+      path: "/component",
+      name: "Component",
+      component: () => import("./views/Component.vue")
     }
   ]
 });
